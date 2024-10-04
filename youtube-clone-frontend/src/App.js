@@ -73,10 +73,16 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setSidebarCollapsed(window.innerWidth < 1312);
+      if (window.innerWidth < 1312) {
+        setSidebarCollapsed(true);
+        setSidebarExpanded(false);
+      } else {
+        setSidebarExpanded(false);
+      }
     };
-
+  
     window.addEventListener('resize', handleResize);
+    handleResize(); // Call it initially to set the correct state
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -88,7 +94,12 @@ function App() {
         <div className={`app ${sidebarExpanded ? 'sidebar-expanded' : ''}`}>
           <Header toggleSidebar={toggleSidebar} user={user} setUser={setUser} />
           <div className="app__page">
-          {window.innerWidth >= 1312 && <Sidebar collapsed={sidebarCollapsed} />}
+          {window.innerWidth >= 1312 ? (
+            <Sidebar collapsed={sidebarCollapsed} />
+          ) : (
+            <Sidebar collapsed={true} />
+          )}
+        
           <div className="main-content" >
             <Routes>
               <Route path="/search" element={<SearchResultsPage />} />
@@ -102,17 +113,17 @@ function App() {
             </div>
           </div>
           {(sidebarExpanded || isClosing) && (
-            <>
-              <ExpandedSidebar 
-                onClose={handleCloseSidebar} 
-                isOpen={sidebarExpanded && !isClosing}
-              />
-              <div 
-                className={`overlay ${isClosing ? 'closing' : ''}`} 
-                onClick={handleCloseSidebar}
-              ></div>
-            </>
-          )}
+          <>
+            <ExpandedSidebar 
+              onClose={handleCloseSidebar} 
+              isOpen={sidebarExpanded && !isClosing}
+            />
+            <div 
+              className={`overlay ${isClosing ? 'closing' : ''}`} 
+              onClick={handleCloseSidebar}
+            ></div>
+          </>
+        )}
         </div>
       </Router>
     </UserProvider>

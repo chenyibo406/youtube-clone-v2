@@ -78,7 +78,7 @@ function Sidebar({ collapsed }) {
       <SidebarRow Icon={HomeIcon} title="Home" />
       <SidebarRow Icon={ExploreIcon} title="Short" />
       <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
-      <SidebarRow Icon={LiveTvIcon} title="You" />
+      {collapsed && <SidebarRow Icon={LiveTvIcon} title="You" />}
       {!collapsed && (
        <>
        <hr />
@@ -99,7 +99,7 @@ function Sidebar({ collapsed }) {
        {!user ? (
           <>
             <div className="sidebar__signIn">
-              <p>Sign in to like videos, comment, and subscribe.</p>
+              <p>Sign in to like videos, <br/> comment, and subscribe.</p>
               <button className="sidebar__signInButton" onClick={signIn}>
                 <AccountCircleIcon />
                 <span>Sign In</span>

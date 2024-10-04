@@ -9,6 +9,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import './VideoPage.css';
 import { Divider } from '@mui/material';
 import { formatDistanceToNow, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
+import withHtmlDecoding from '../components/withHtmlDecoding';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
@@ -216,4 +217,4 @@ function VideoPage() {
   );
 }
 
-export default VideoPage;
+export default withHtmlDecoding(VideoPage);

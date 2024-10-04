@@ -3,6 +3,7 @@ import { Avatar } from '@mui/material';
 import { formatDistanceToNow } from 'date-fns';
 import './VideoCard.css';
 import { Link } from 'react-router-dom';
+import withHtmlDecoding from '../components/withHtmlDecoding';
 
 function VideoCard({ video }) {
   return (
@@ -36,4 +37,4 @@ function VideoCard({ video }) {
   );
 }
 
-export default VideoCard;
+export default withHtmlDecoding(VideoCard);

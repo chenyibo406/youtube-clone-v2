@@ -1,94 +1,81 @@
-/* Reset default paragraph margins */
+/* Reset and general styles */
 p {
   margin: 0;
 }
 
 /* Main sidebar container */
 .sidebar {
-  /* position: fixed; */
-  height: calc(100vh - 56px); /* Full viewport height minus header */
-  width: 284px;
+  /* position: fixed;
+  top: 56px; */
+  height: calc(100vh - 56px);
+  width: 240px;
   background-color: white;
-  transition: all 0.2s ease-in-out; /* Smooth transition for all properties */
-  overflow-y: auto; /* Allow vertical scrolling */
-  z-index: 99; /* Stack order */
+  transition: all 0.2s ease-in-out;
+  overflow-y: auto;
+  z-index: 99;
   padding: 12px;
-  box-sizing: border-box; /* Include padding in width calculation */
+  box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Hide scrollbar by default for different browsers */
-.sidebar {
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
-}
-
-/* Collapsed sidebar styles */
+/* Collapsed sidebar */
 .sidebar--collapsed {
+  /* width: 100%; */
   width: auto;
   padding: 0 4px;
-  /* width: auto; */
+  margin-top: 12px;
 }
 
-/* @media (min-width: 1312px) {
-  .sidebar {
-    position: sticky;
-    top: 56px;
-  }
-} */
-
-/* Show scrollbar on hover */
+/* Scrollbar styles */
 .sidebar:hover {
-  scrollbar-width: thin; /* Width of the scrollbar */
-  scrollbar-color: #909090 transparent; /* Thumb and track color */
-  scrollbar-width: thin; /* For Firefox */
-  -ms-overflow-style: auto; /* For IE/Edge */
-  overflow-y: overlay; /* Use overlay to prevent layout shift */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #909090 transparent;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 .sidebar::-webkit-scrollbar {
-  width: 8px; /* Width of the entire scrollbar */
-  background: white; /* Scrollbar background color */
+  width: 8px;
+  background: white;
 }
 
 .sidebar:hover::-webkit-scrollbar {
-  display: block; /* Show scrollbar on hover */
+  display: block;
 }
 
 .sidebar:hover::-webkit-scrollbar-track {
-  background: white; /* Scrollbar track background */
+  background: white;
 }
 
 .sidebar:hover::-webkit-scrollbar-thumb {
-  background-color: #d9d9d9; /* Scrollbar handle color */
-  border-radius: 4px; /* Rounded corners for scrollbar handle */
-  max-height: 170px; /* Maximum height of scrollbar handle */
-  border: 2px solid white; /* White border around scrollbar handle */
-  background-clip: padding-box; /* Clip background to padding box */
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  max-height: 170px;
+  border: 2px solid white;
+  background-clip: padding-box;
 }
 
-/* Common styles for scrollbar buttons (arrows) */
+/* Scrollbar buttons */
 .sidebar:hover::-webkit-scrollbar-button:single-button {
-  background-color: white; /* Button background color */
+  background-color: white;
   display: block;
   border-style: solid;
   height: 13px;
   width: 16px;
 }
 
-/* Up Arrow */
 .sidebar:hover::-webkit-scrollbar-button:single-button:vertical:decrement {
-  border-width: 0 6px 6px 6px; /* Triangle shape pointing up */
-  border-color: white white #909090 white; /* Only bottom border visible */
+  border-width: 0 6px 6px 6px;
+  border-color: white white #909090 white;
 }
 
-/* Down Arrow */
 .sidebar:hover::-webkit-scrollbar-button:single-button:vertical:increment {
-  border-width: 6px 6px 0 6px; /* Triangle shape pointing down */
-  border-color: #909090 white white white; /* Only top border visible */
+  border-width: 6px 6px 0 6px;
+  border-color: #909090 white white white;
 }
 
-/* Section title styles */
+/* Section title */
 .sidebar__sectionTitle {
   font-size: 16px;
   line-height: 22px;
@@ -97,7 +84,7 @@ p {
   color: #0f0f0f;
 }
 
-/* Sidebar row styles */
+/* Sidebar row */
 .sidebarRow {
   width: 204px;
   display: flex;
@@ -106,21 +93,18 @@ p {
   height: 40px;
   cursor: pointer;
   text-decoration: none;
-  /* color: #606060; */
   box-sizing: border-box;
   border-radius: 12px;
 }
 
 .sidebarRow:hover {
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.05); /* Light gray background on hover */
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .sidebarRow.selected {
-  background-color: #f2f2f2; /* Gray background for selected row */
+  background-color: #f2f2f2;
 }
 
-/* Sidebar row icon styles */
 .sidebarRow__icon {
   width: 20px;
   height: 20px;
@@ -128,17 +112,15 @@ p {
   color: #606060;
 }
 
-/* Sidebar row title styles */
 .sidebarRow__title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   max-width: 132px;
   white-space: nowrap;
   color: #0f0f0f;
 }
 
-/* Sidebar row body text styles */
 .sidebarRow__body {
   font-size: 14px;
   font-weight: 400;
@@ -146,23 +128,22 @@ p {
   color: #0f0f0f;
 }
 
-/* Hover and selected states for sidebar row */
 .sidebarRow:hover > .sidebarRow__icon,
 .sidebarRow:hover > .sidebarRow__title,
 .sidebarRow.selected > .sidebarRow__icon,
 .sidebarRow.selected > .sidebarRow__title {
-  color: red; /* Change color on hover/select */
+  color: red;
 }
 
-/* Collapsed sidebar row styles */
+/* Collapsed sidebar row */
 .sidebar--collapsed .sidebarRow {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
-  width: 64px;
-  padding: 16px 0px 14px 0px; /* Uncomment this line */
-  box-sizing: border-box; /* Add this line */
+  height: 74px;
+  width: 72px;
+  padding: 16px 0px 14px 0px;
+  box-sizing: border-box;
 }
 
 .sidebar--collapsed .sidebarRow__icon {
@@ -177,13 +158,13 @@ p {
   width: 100%;
   text-align: center;
   white-space: normal;
-  overflow: visible; /* Change from hidden to visible */
-  display: block; /* Change from -webkit-box to block */
+  overflow: visible;
+  display: block;
   line-height: 1.2;
-  max-height: none; /* Remove any max-height restriction */
+  max-height: none;
 }
 
-/* Horizontal rule styles */
+/* Horizontal rule */
 .sidebar hr {
   height: 1px;
   border: 0;
@@ -195,10 +176,11 @@ p {
   margin: 0;
 }
 
-/* Sign-in section styles */
+/* Sign-in section */
 .sidebar__signIn {
-  padding: 4px 16px;
-  max-width: 180px;
+  /* padding-left: 12px; */
+  padding: 8px 0px 8px 12px;
+  /* max-width: 180px; */
 }
 
 .sidebar__signIn p {
@@ -221,7 +203,7 @@ p {
 }
 
 .sidebar__signInButton:hover {
-  background-color: #def1ff; /* Light blue on hover */
+  background-color: #def1ff;
 }
 
 .sidebar__signInButton .MuiSvgIcon-root {
@@ -235,7 +217,7 @@ p {
   font-weight: 500;
 }
 
-/* Avatar styles */
+/* Avatar */
 .sidebarRow__avatar {
   width: 24px;
   height: 24px;
@@ -243,7 +225,7 @@ p {
   margin-right: 24px;
 }
 
-/* Footer styles */
+/* Footer */
 .footer {
   max-width: 240px;
   width: 240px;
@@ -270,7 +252,7 @@ p {
   margin-left: 24px;
 }
 
-/* Utility class */
+/* Utility classes */
 .mr-12 {
   margin-right: 12px;
 }

@@ -5,7 +5,7 @@ import './SearchResultsPage.css';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Link } from 'react-router-dom';
 import { formatDistanceToNow, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
-
+import withHtmlDecoding from '../components/withHtmlDecoding';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
@@ -150,4 +150,5 @@ function SearchResultsPage() {
   );
 }
 
-export default SearchResultsPage;
+
+export default withHtmlDecoding(SearchResultsPage);
