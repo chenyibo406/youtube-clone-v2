@@ -5,6 +5,15 @@
 /.pnp
 .pnp.js
 
+# Ignore .env files in all subdirectories
+*/**/.env
+
+# Specifically ignore .env files in youtube-clone-frontend and youtube-clone-sanity
+/youtube-clone-frontend/.env
+/youtube-clone-sanity/.env
+
+# Optionally, ignore all .env files (including those in the root directory)
+**/.env
 # Compiled Sanity Studio
 /dist
 
