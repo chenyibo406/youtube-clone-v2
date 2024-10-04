@@ -1,0 +1,29 @@
+/* Remove default link styles for all React Router Link components */
+a[href]:not([class]),
+a:not([href]):not([class]),
+a.react-router-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Optional: Remove the default focus outline */
+a:focus {
+  outline: none;
+}
+
+/* Optional: Style for hover state if you want to indicate interactivity */
+a:hover {
+  opacity: 0.8;
+}
+
+/* Global button reset */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

@@ -1,0 +1,58 @@
+.expanded-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background-color: white;
+  z-index: 200;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  transition: width 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  white-space: nowrap;
+}
+
+.expanded-sidebar.open {
+  width: 240px;
+}
+
+.expanded-sidebar__header {
+  height: 56px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.expanded-sidebar__header .header__logo {
+  width: 90px;
+  height: 20px;
+  padding: 18px 14px 18px 16px;
+  object-fit: contain;
+}
+
+.expanded-sidebar__content {
+  padding-left: 16px;
+  padding-right: 16px;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  transition-delay: 200ms;
+  /* transition: opacity 150ms ease-in-out; */
+  /* transition-delay: 100ms; */
+}
+
+.expanded-sidebar.open .expanded-sidebar__content {
+  opacity: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.expanded-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.expanded-sidebar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

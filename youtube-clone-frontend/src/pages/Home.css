@@ -1,0 +1,93 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: calc(100vh - 56px);
+  overflow-y: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  /* background: white; */
+
+  scrollbar-width: 17px; /* Width of the scrollbar */
+  scrollbar-color: #606060 transparent; /* Thumb and track color */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+/* Hover effect */
+.main-content:hover {
+  scrollbar-color: #606060 transparent; /* Darker thumb color on hover */
+}
+
+/* For older versions of Chrome or to ensure consistency */
+.main-content::-webkit-scrollbar {
+  width: 17px; /* Width of the entire scrollbar */
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  height: 112px; /* Set the height of the thumb */
+  background-color: #606060; /* Thumb color */
+  border: 4px solid transparent; /* Creates padding around scroll thumb */
+  background-clip: padding-box; /* Prevents bg color from leaking outside the border */
+  min-height: 112px; /* Minimum height of the thumb */
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff; /* Darker thumb color on hover */
+}
+
+.home {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 2170px; /* Maximum width for 6 columns */
+  margin: 0 auto; /* Center the content */
+}
+
+.filter-bar {
+  position: sticky;
+  /* display: flex; */
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  padding: 12px 24px;
+  display: flex;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.filter-item {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  height: 32px;
+  padding: 0 12px;
+  margin: 0 12px 0 0;
+  white-space: nowrap;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-item:hover {
+  background-color: #e5e5e5;
+}
+
+.filter-item.active {
+  background-color: #030303;
+  color: white;
+}
+
+.filter-item:last-child {
+  margin-right: 0;
+}
+
+hr {
+  margin: 0;
+}

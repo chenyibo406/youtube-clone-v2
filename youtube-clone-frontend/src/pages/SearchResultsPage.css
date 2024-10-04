@@ -1,0 +1,99 @@
+.searchResults {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 16px 0 16px;
+  max-width: 100%;
+}
+
+.searchResult {
+  display: flex;
+  gap: 16px;
+}
+
+.searchResult__thumbnail {
+  flex: 0 0 auto;
+  /* width: 360px; */
+  width: 100%;
+  /* height: 202px; */
+  aspect-ratio: 16 / 9;
+  min-width: 240px;
+  max-width: 500px;
+}
+
+.searchResult__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.searchResult__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.searchResult__title {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  margin: 0 0 4px 0;
+  color: #0f0f0f;
+}
+
+.searchResult__metadata {
+  font-size: 12px;
+  line-height: 18px;
+  color: #606060;
+  margin-bottom: 8px;
+}
+
+.searchResult__dot {
+  margin: 0 4px;
+}
+
+.searchResult__channel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.searchResult__channelAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.searchResult__channelName {
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.searchResult__verifiedIcon {
+  font-size: 14px !important;
+  color: #606060;
+}
+
+.searchResult__description {
+  font-size: 12px;
+  line-height: 18px;
+  color: #606060;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .searchResult {
+    flex-direction: column;
+  }
+
+  .searchResult__thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
